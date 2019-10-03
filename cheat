@@ -1,0 +1,58 @@
+#!/bin/bash
+
+: '
+
+PURPOSE:
+
+Quick and easy way to check your custom cheatsheets
+
+
+USAGE:
+
+$ cheat <keyword>
+
+where <keyword> is vim, tmux, bash, or anything else you might have a cheatsheet for
+
+INSTRUCTIONS:
+
+1) put it in the bin folder (user/local/bin probably being the most appropriate)
+2) make sure bin is in your path (user/local/bin already in path on osx by default)
+3) run via calling the name of the script
+
+TODOS:
+1) Doesnt currently handle multiple cheatsheet matches
+2) Doesnt check validity of user input or have any error checking
+3) Doesnt check if the file is there but open (ie. perm denied, locked, etc)
+'
+
+CS_DIR=~/cheatsheets/*
+
+# Check for user input, if not, ask user for what cheatsheet they need
+if [[ -z "$1" ]]; then
+  read -p "What cheatsheet are you looking for? " CS_NAME
+else
+  CS_NAME=$1
+echo "Okay...looking for cheatsheet with keyword: $CS_NAME"
+fi
+
+
+# Look for directory and match cheatsheet
+REGEX=".*${CS_NAME}.*"
+MATCH=
+
+for FILE in $CS_DIR; do
+  if [[ $FILE =~ $REGEX ]]; then
+    MATCH=$FILE
+    break;
+  fi
+done
+
+echo "**DEBUG: $MATCH"
+
+if [[ -n $MATCH ]]; then
+  less $MATCH
+else
+  echo "Nothing found in $CS_DIR that matched keyword: $CS_NAME"
+  ls  $CS_DIR
+fi
+
