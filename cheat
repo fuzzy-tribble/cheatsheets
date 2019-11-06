@@ -1,58 +1,52 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
-: '
-
-PURPOSE:
-
-Quick and easy way to check your custom cheatsheets
-
-
-USAGE:
-
-$ cheat <keyword>
-
-where <keyword> is vim, tmux, bash, or anything else you might have a cheatsheet for
-
-INSTRUCTIONS:
-
-1) put it in the bin folder (user/local/bin probably being the most appropriate)
-2) make sure bin is in your path (user/local/bin already in path on osx by default)
-3) run via calling the name of the script
-
-TODOS:
-1) Doesnt currently handle multiple cheatsheet matches
-2) Doesnt check validity of user input or have any error checking
-3) Doesnt check if the file is there but open (ie. perm denied, locked, etc)
-'
+###################################################################
+#Script Name	:cheat
+#Description	:checks your custom cheatsheets
+#Usage        :cheat <keyword> (eg cheat vim, cheat tmux, etc)
+#Todos        :input validation, error checking
+###################################################################
 
 CS_DIR=~/cheatsheets/*
 
 # Check for user input, if not, ask user for what cheatsheet they need
-if [[ -z "$1" ]]; then
+if [[ $# < 1 ]]; then
   read -p "What cheatsheet are you looking for? " CS_NAME
 else
   CS_NAME=$1
-echo "Okay...looking for cheatsheet with keyword: $CS_NAME"
+echo "Looking for cheatsheet with keyword: $CS_NAME"
 fi
-
 
 # Look for directory and match cheatsheet
 REGEX=".*${CS_NAME}.*"
-MATCH=
+MATCH=()
 
 for FILE in $CS_DIR; do
   if [[ $FILE =~ $REGEX ]]; then
-    MATCH=$FILE
-    break;
+    # echo "Found: $FILE"
+    MATCH+=($FILE)
   fi
 done
 
-echo "**DEBUG: $MATCH"
+# echo "**DEBUG** MATCH = ${MATCH[@]}"
 
-if [[ -n $MATCH ]]; then
-  less $MATCH
-else
+if [[ ${#MATCH[@]} -eq 0 ]]; then
   echo "Nothing found in $CS_DIR that matched keyword: $CS_NAME"
-  ls  $CS_DIR
+  ls $CS_DIR
+elif [[ ${#MATCH[@]} -eq 1 ]]; then
+  less ${MATCH[0]}
+else
+  echo "Found ${#MATCH[@]} matches..."
+  COUNTER=0
+  for i in "${MATCH[@]}"; do
+    echo "[$COUNTER] $i"
+    ((COUNTER++))
+  done
+  echo "Enter the number corresponding to the cheatsheet you want "
+  read ans
+  if [[ $# > 0 ]]; then
+    less ${MATCH[ans]}
+  fi
 fi
-

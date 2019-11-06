@@ -20,8 +20,7 @@
 
 `:20` Go to line 20 of the file
 
-`:tag <tagname>` or `Ctrl-]` when your cursor is positioned over the tag name
-*Esp useful when browsing source code and you need to jump to function definitions, etc*
+`:tag <tagname>` or `Ctrl-]` when your cursor is positioned over the tag name *(esp useful when browsing source code and you need to jump to function definitions, etc)*
 
 ## Editing (Copy/Paste/Delete)
 

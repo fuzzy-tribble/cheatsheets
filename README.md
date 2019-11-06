@@ -1,14 +1,19 @@
-# Cheatsheets
+# Cheatsheets Tool
 
-*[Tmux Cheatsheet][0]
-*[EASY Vim Cheatsheet][1]
-*[ADV Vim Cheatsheet][2]
-*[Bash Cheatsheet][3]
+## Purpose
+A quick and dirty cheatsheet utility because my small brain can never remember all the switches/flags, commands, etc with all the various tools that I use.
 
-[0]:[https://github.com/nancynobody/cheatsheets/blob/master/tmux_cheatsheet.md]
-[1]:[https://github.com/nancynobody/cheatsheets/blob/master/vim_cheatsheet_EASY.md]
-[2]:[https://github.com/nancynobody/cheatsheets/blob/master/vim_cheatsheet_ADV.md]
-[3]:[https://github.com/nancynobody/cheatsheets/blob/master/bash_cheatsheet.md]
+Feel free to steal it, make it better, whatever.
 
+## USAGE
 
+From terminal type:
+`$ cheat <keyword>`
 
+where `<keyword>` is vim, tmux, bash, or anything else you might have a cheatsheet for
+
+## INSTRUCTIONS
+
+1) make the `cheat` script executable (`chmod +x cheat.sh`) and put it in the bin folder (`user/local/bin` probably being the most appropriate)
+2) make sure bin is in your path (user/local/bin already in path on osx by default)
+3) run via calling the name of the script (eg `cheat tmux`)

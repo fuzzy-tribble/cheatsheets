@@ -1,4 +1,4 @@
-# TMUX WORKFLOW CHEATSHEET
+# TMUX Workflow Cheatsheet
 
 ## Basic Workflow
 
@@ -7,7 +7,7 @@
 `tmux new -s robots_app`
 
 In this workflow example you can see three projects when you type `tmux ls` to list sessions &amp; windows
-```
+```bash
 robots_app: 2 windows
 jupyter_notebooks: 1 windows
 networks_app: 3 windows
