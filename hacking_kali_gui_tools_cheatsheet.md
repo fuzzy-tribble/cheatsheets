@@ -1,7 +1,5 @@
 # GUI Hacking TOOLS Cheatsheet
 
-<small>Updated: 11-05-2019</small>
-
 **Purpose:** Because I have trouble keeping all this shit in my head (tools, usages, tips/tricks, key info/resources, etc). Not an exhaustive cheatsheet, just my favs and things I find most useful.
 
 ---
