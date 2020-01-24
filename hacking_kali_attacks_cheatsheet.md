@@ -1,4 +1,4 @@
-# Hacking ATTACKS Cheatsheet
+# Hacking Cheatsheet
 
 **Purpose:** Because I have trouble keeping all this shit in my head (tools, usages, tips/tricks, key info/resources, etc). Not an exhaustive cheatsheet, just my favs and things I find most useful.
 
@@ -99,3 +99,15 @@ dhclient wlan0
 ## Keylogger
 
 ## Spear Phishing
+
+---
+
+# Demo Favs
+
+## Find business emails
+
+## Crack my password
+Demo of how easy passwords are to crack
+
+### Case 1: Brute Force
+### Case 2: Dictionary Attack
