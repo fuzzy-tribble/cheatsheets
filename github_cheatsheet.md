@@ -116,6 +116,7 @@ are just *pointers to specific commits*; `master` is created by default; `stable
 | `git push origin [branch name]` | Push a branch to your remote repository |
 | `git push -u origin [branch name]` | Push changes to remote repository (and remember the branch) |
 | `git push` | Push to remote repository (remembered branch) |
+| `git config --local credential.helper ""` | To push as another user run this first and it will prompt you for username and password |
 | `git push origin --delete [branch name]` | Delete a remote branch |
 | `git fetch [remote] [branch]` | Download object and refs from repo |
 | `git pull [remote] [branch]` | Pull changes from remote branch (`git fetch` + `git merge`) |
