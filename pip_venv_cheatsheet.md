@@ -19,9 +19,11 @@ myprojectfolder
 
 ## VENV
 
-### Create new venv
+### Create new venv called .env
 
-`python3 -m venv <directory>`
+```
+python3 -m venv .env
+```
 
 ### Activate / Deactivate
 
