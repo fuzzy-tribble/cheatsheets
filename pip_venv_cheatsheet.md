@@ -27,13 +27,13 @@ python3 -m venv .env
 
 ### Activate / Deactivate
 
-`source <director>/bin/activate` --> enter venv
+`source .env/bin/activate`
 
 `deactivate`
 
 ### Create requirements.txt
 
-```python
+```bash
 # save imports to requirements
 pip freeze > requirements.txt
 
