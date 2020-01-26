@@ -2,12 +2,14 @@
 
 ## Best Practice
 
-Structure like this:
+Structure like this
 
+```
 myprojectfolder
 |-.venv
 |-src
 |-test
+```
 
 *Note: Dont forget to put .venv in your .gitignore (prob just throw it in your global gitignore)*
 
