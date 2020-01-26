@@ -20,6 +20,9 @@ deactivate
 # Install packages; save them to reqs file
 pip install package
 pip freeze > requirements.txt
+
+# To install the packages from requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Create Project Scaffolding / Structure
