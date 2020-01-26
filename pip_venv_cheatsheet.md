@@ -31,6 +31,12 @@ myprojectfolder
 
 ### Create requirements.txt
 
+```python
+# save imports to requirements
 pip freeze > requirements.txt
+
+# install what is in requirements.txt
+pip install -r requirements.txt
+```
 
 
