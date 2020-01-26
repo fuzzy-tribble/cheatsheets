@@ -30,7 +30,7 @@ source .env/bin/activate
 deactivate
 ```
 
-### Create requirements.txt
+### Keeping Track of Requirements
 
 ```bash
 # save imports to requirements.txt
