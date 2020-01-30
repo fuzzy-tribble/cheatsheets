@@ -7,6 +7,8 @@
 ## `Google`
 Advanced Google search options
 
+https://ahrefs.com/blog/google-advanced-search-operators/
+
 Quotes, AND, OR, -
 ```
 "jane" AND "dance" OR "cats" -"dogs"

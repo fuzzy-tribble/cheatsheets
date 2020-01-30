@@ -21,6 +21,14 @@ Translate characters (replace chars)
 #TODO
 ```
 
+## `cut`
+Cut out sections
+
+```bash
+# Cut using delimeter
+cut -d " "
+```
+
 ## `chmod`
 Change access perms (change mode)
 
@@ -402,8 +410,21 @@ systemctl is-enabled name.service # will be activated when booting
 systemctl is-failed name.service # failed to load
 ```
 
+## `netcat` or `nc`
+Establish a listening port
+
+```bash
+# Listen on any iface, port 7777 for any connections
+nc -nvlp 7777
+```
+
 ## `netstat`
 Display's network statistics about how your computer is communicating with other computers or network devices
+
+```bash
+# Show active connections on your machine
+netstat -anl
+```
 
 ```bash
 netsat --all
